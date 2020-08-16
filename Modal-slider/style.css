@@ -1,10 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
 
 :root {
     --modal-duration: 1s;
-    --primary-color: #30336b;
-    --secondary-color: #be2edd;
+    --primary-color: #2740ca;
+    --secondary-color: #357ae0;
 }
 
 * { 
@@ -12,8 +12,13 @@
 }
 
 body {
-    /* font-family: ; */
+    font-family: 'IBM Plex Sans', sans-serif; 
     margin: 0;
+    transition: transform 0.3s ease;
+}
+
+body.nav-display{
+    transform: translateX(200px);
 }
 
 nav {
@@ -62,4 +67,154 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 110%;
+    position: relative;
+    padding: 250px 15px;
+    text-align: center;
+    height: 100vh;
+    
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 30px 0;
+}
+
+button,
+input[type='submit'] {
+    background-color: var(--secondary-color);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+button:focus {
+    outline: none;
+}
+
+.nav-btn {
+    background-color: rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.cta-btn {
+    padding: 12px 30px;
+    font-size: 15px;
+}
+
+.container {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 800px;
+}
+
+/* .container .first-section {
+    background: url(me.jpg);
+    position: relative;
+    opacity: 0.7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    background-attachment: fixed;
+
+} */
+
+.modal .display-modal {
+    display: block;
+}
+
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.modal-container.display-modal {
+    display: block;
+    animation-name: modalDisplay;
+    animation-duration: var(--modal-duration);
+}
+
+.main-modal {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 400px;
+}
+
+.modal-header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 15px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    /* border-bottom: 1px solid #333; */
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-form div {
+    margin: 15px 0;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-form .form-input {
+    padding: 8px;
+    border: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.modal-form .form-input:focus {
+    outline: none;
+}
+
+.closebtn {
+    background: transparent;
+    font-size: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+@keyframes modalDisplay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
